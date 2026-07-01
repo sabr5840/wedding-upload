@@ -914,3 +914,50 @@ button:disabled {
     width:450px;
     height:450px;
 }
+
+@media (max-width: 520px) {
+  .page {
+    padding: 16px;
+    overflow-x: hidden;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 20px 24px;
+    border-radius: 24px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    white-space: nowrap;
+  }
+
+  .heroImage {
+    width: 150px;
+  }
+
+  .welcome {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .intro {
+    font-size: 15px;
+    margin: -12px auto -12px;
+  }
+
+  input {
+    font-size: 16px;
+    padding: 13px;
+  }
+
+  .uploadBox input {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px;
+  }
+}
