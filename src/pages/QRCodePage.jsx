@@ -1,31 +1,29 @@
-import { useRef } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import "../App.css";
 
 function QRCodePage() {
-  const qrRef = useRef(null);
-  const uploadUrl = window.location.origin + "/";
+  const uploadUrl = "https://wedding-upload-zeta.vercel.app/";
 
-  function downloadQRCode() {
-    const canvas = qrRef.current.querySelector("canvas");
-    const pngUrl = canvas.toDataURL("image/png");
+  const downloadQR = () => {
+    const canvas = document.querySelector("canvas");
+    const url = canvas.toDataURL("image/png");
 
     const link = document.createElement("a");
-    link.href = pngUrl;
-    link.download = "adam-steffani-qr-kode.png";
-    document.body.appendChild(link);
+    link.href = url;
+    link.download = "Bryllup-QR.png";
     link.click();
-    document.body.removeChild(link);
-  }
+  };
 
   return (
     <main className="qrOnlyPage">
-      <div className="qrOnlyBox" ref={qrRef}>
-        <QRCodeCanvas value={uploadUrl} size={360} />
-      </div>
+      <QRCodeCanvas
+        value={uploadUrl}
+        size={1200}
+        includeMargin={true}
+      />
 
-      <button className="downloadQrButton" onClick={downloadQRCode}>
-        Download QR-kode
+      <button onClick={downloadQR}>
+        Download QR
       </button>
     </main>
   );

@@ -899,3 +899,18 @@ button:disabled {
   font-weight: 800;
   cursor: pointer;
 }
+
+.qrOnlyPage{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    background:white;
+}
+
+.qrOnlyPage canvas{
+    width:450px;
+    height:450px;
+}
