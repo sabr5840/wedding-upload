@@ -15,16 +15,23 @@ function QRCodePage() {
   };
 
   return (
-    <main className="qrOnlyPage">
-      <QRCodeCanvas
-        value={uploadUrl}
-        size={1200}
-        includeMargin={true}
-      />
+    <main className="qrPage">
+      <div className="qrOnly">
+        <div ref={qrRef} className="qrCanvas">
+          <QRCodeCanvas
+            value={uploadUrl}
+            size={1000}
+            includeMargin
+          />
+        </div>
 
-      <button onClick={downloadQR}>
-        Download QR
-      </button>
+        <button
+          className="downloadButton"
+          onClick={downloadQR}
+        >
+          Download QR
+        </button>
+      </div>
     </main>
   );
 }
