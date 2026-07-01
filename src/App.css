@@ -34,7 +34,7 @@ body {
 }
 
 .heroImage {
-  width: 180px;
+  width: 120px;
   height: auto;
   display: block;
   margin: -30px auto -10px;
@@ -49,6 +49,8 @@ body {
   font-weight: 500;
   margin: 0;
   line-height: 1;
+  color: #2b2523;
+
 }
 
 .hero span {
@@ -600,6 +602,8 @@ button:disabled {
     padding: 26px 18px 22px;
     border-radius: 24px;
     overflow: hidden;
+    background: #ffffff;
+
   }
 
   .hero {
