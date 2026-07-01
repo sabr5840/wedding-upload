@@ -7,7 +7,10 @@ body {
   font-family: "Georgia", "Times New Roman", serif;
   background: radial-gradient(circle at top, #fff 0%, #fff7f1 42%, #ebe5da 100%);
   color: #2b2523;
+  overflow-x: hidden;
 }
+
+/* Shared layout */
 
 .page {
   min-height: 100vh;
@@ -20,13 +23,33 @@ body {
 .card {
   width: 100%;
   max-width: 440px;
-  background: rgba(255, 255, 255, 0.92);
+  background: #ffffff;
   padding: 34px 30px 30px;
   border-radius: 28px;
   box-shadow: 0 22px 55px rgba(92, 66, 50, 0.16);
   text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.22);
+  border: 1px solid #e9e2dc;
 }
+
+button {
+  margin-top: 4px;
+  border: 0;
+  padding: 16px;
+  border-radius: 999px;
+  background: #2b2523;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 12px 22px rgba(43, 37, 35, 0.18);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Front page */
 
 .hero {
   text-align: center;
@@ -50,12 +73,11 @@ body {
   margin: 0;
   line-height: 1;
   color: #2b2523;
-
 }
 
 .hero span {
   margin: 0 12px;
-  color: #d1c7b2;
+  color: #c5b89f;
 }
 
 .date {
@@ -121,24 +143,6 @@ input {
   background: #fff;
 }
 
-button {
-  margin-top: 4px;
-  border: 0;
-  padding: 16px;
-  border-radius: 999px;
-  background: #2b2523;
-  color: white;
-  font-size: 16px;
-  font-weight: 800;
-  cursor: pointer;
-  box-shadow: 0 12px 22px rgba(43, 37, 35, 0.18);
-}
-
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
 /* Upload progress */
 
 .progressWrapper {
@@ -189,7 +193,6 @@ button:disabled {
   font-weight: 500;
   margin: 0 0 20px;
   color: #6f625d;
-
 }
 
 .thankYouText {
@@ -284,14 +287,10 @@ button:disabled {
 
 .downloadAllButton {
   background: #2b2523;
-  margin-top: 0;
-
 }
 
 .deleteSelectedButton {
   background: #7f1d1d;
-  margin-top: 0;
-
 }
 
 /* Gallery */
@@ -334,7 +333,6 @@ button:disabled {
   position: absolute;
   left: 12px;
   bottom: 12px;
-  transform: none;
   z-index: 3;
   border: 0;
   padding: 8px 14px;
@@ -381,7 +379,7 @@ button:disabled {
 .lightboxContent img,
 .lightboxContent video {
   max-width: 92vw;
-  max-height: 88vh;
+  max-height: 84vh;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -510,7 +508,6 @@ button:disabled {
   font-size: 38px;
   font-weight: 500;
   color: #6f625d;
-
 }
 
 .confirmModal p {
@@ -588,40 +585,34 @@ button:disabled {
   cursor: pointer;
 }
 
-/* Mobile upload page */
+/* Mobile upload */
 
 @media (max-width: 520px) {
-  body {
-    overflow-x: hidden;
-  }
-
   .page {
     min-height: 100dvh;
     padding: 14px;
-    overflow-x: hidden;
   }
 
   .card {
     width: 100%;
     max-width: 100%;
-    padding: 26px 18px 22px;
+    padding: 24px 18px 22px;
     border-radius: 24px;
     overflow: hidden;
     background: #ffffff;
-
   }
 
   .hero {
-    margin-bottom: 28px;
+    margin-bottom: 26px;
   }
 
   .heroImage {
-    width: 145px;
-    margin: -22px auto -8px;
+    width: 125px;
+    margin: -20px auto -8px;
   }
 
   .hero h1 {
-    font-size: 41px;
+    font-size: 40px;
     white-space: nowrap;
   }
 
@@ -648,8 +639,8 @@ button:disabled {
   }
 
   .form {
-    gap: 14px;
-    margin-top: 26px;
+    gap: 13px;
+    margin-top: 24px;
   }
 
   input {
@@ -672,7 +663,7 @@ button:disabled {
   }
 }
 
-/* Mobile QR page */
+/* Mobile QR */
 
 @media (max-width: 520px) {
   .qrOnlyPage {
@@ -698,100 +689,128 @@ button:disabled {
 
 @media (max-width: 700px) {
   .adminPage {
-    padding: 34px 16px;
+    padding: 34px 18px;
+  }
+
+  .adminHeader {
+    margin-bottom: 28px;
   }
 
   .adminHeader h1 {
     font-size: 44px;
   }
 
+  .downloadAllButton,
+  .deleteSelectedButton {
+    width: 100%;
+    max-width: 360px;
+    height: 58px;
+    padding: 14px 18px;
+    font-size: 16px;
+    display: block;
+    margin: 14px auto 0;
+  }
+
   .galleryGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 370px;
+  }
+
+  .galleryItem {
+    width: 100%;
+    max-width: 370px;
+    margin: 0 auto;
+    border-radius: 22px;
+  }
+
+  .selectPill {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    width: auto;
+    padding: 11px 14px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.94);
+    color: #2b2523;
+  }
+
+  .adminGalleryItem.isSelected {
+    outline: 4px solid #b28a6a;
+    outline-offset: 5px;
+  }
+
+  .adminGalleryItem.isSelected .selectPill {
+    background: rgba(43, 37, 35, 0.92);
+    color: white;
+  }
+
+  .lightboxOverlay {
+    padding: 18px;
+  }
+
+  .lightboxContent {
+    width: 100vw;
+    height: 100dvh;
+    padding: 54px 16px 34px;
   }
 
   .lightboxContent img,
   .lightboxContent video {
-    max-width: 94vw;
-    max-height: 76vh;
+    max-width: 88vw;
+    max-height: 62dvh;
+    border-radius: 20px;
+  }
+
+  .lightboxClose {
+    top: 24px;
+    right: 24px;
+    font-size: 42px;
+  }
+
+  .lightboxNav {
+    font-size: 48px;
+  }
+
+  .lightboxNav.left {
+    left: 18px;
+  }
+
+  .lightboxNav.right {
+    right: 18px;
   }
 
   .lightboxActions {
-    gap: 10px;
-    padding: 0 14px;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 340px;
+    margin-top: 18px;
+    padding: 0;
   }
 
   .lightboxDownload,
   .lightboxDelete {
+    width: 100%;
     min-width: 0;
-    flex: 1;
-    height: 52px;
-    font-size: 14px;
+    height: 54px;
+    font-size: 15px;
     padding: 12px;
-  }
-
-  .lightboxNav {
-    font-size: 52px;
-  }
-
-  .lightboxNav.left {
-    left: 14px;
-  }
-
-  .lightboxNav.right {
-    right: 14px;
   }
 
   .modalActions {
     flex-direction: column;
   }
-}
 
-.adminActions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  margin-top: 18px;
-  flex-wrap: wrap;
-}
-
-.downloadAllButton,
-.deleteSelectedButton {
-  margin-top: 0;
-}
-
-.selectPill {
-  left: 10px;
-  bottom: 10px;
-
-  padding: 6px 14px;
-  font-size: 14px;
-  font-weight: 700;
-
-  background: rgba(255,255,255,0.95);
-  color: #2b2523;
-
-  border-radius: 999px;
-}
-
-.adminGalleryItem.isSelected .selectPill {
-  background: #2b2523;
-  color: white;
-}
-
-@media (max-width: 700px) {
-
-  .selectPill {
-    left: 8px;
-    bottom: 8px;
-
-    padding: 4px 10px;
-    font-size: 11px;
-    font-weight: 700;
-
-    min-width: auto;
-    line-height: 1.1;
+  .confirmModal {
+    max-width: 360px;
+    padding: 30px 24px;
   }
 
+  .confirmModal h2 {
+    font-size: 34px;
+  }
 }
