@@ -97,14 +97,7 @@ function LandingPage() {
         </p>
 
         <form onSubmit={handleUpload} className="form">
-          <label>
-            <input
-              type="text"
-              placeholder="Navn (valgfrit)"
-              value={guestName}
-              onChange={(e) => setGuestName(e.target.value)}
-            />
-          </label>
+
 
           <label className="uploadBox">
             <input
