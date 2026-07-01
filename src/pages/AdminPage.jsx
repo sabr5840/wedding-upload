@@ -160,6 +160,7 @@ function AdminPage() {
         </h1>
         <p>{media.length} minder uploadet</p>
 
+      <div className="adminActions">
         {media.length > 0 && (
           <button className="downloadAllButton" onClick={downloadAll}>
             Download alle billeder
@@ -171,6 +172,7 @@ function AdminPage() {
             Slet {selected.length} valgte
           </button>
         )}
+      </div>
       </section>
 
       {loading && <p className="adminMessage">Henter billeder...</p>}

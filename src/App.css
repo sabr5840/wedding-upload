@@ -279,10 +279,14 @@ button:disabled {
 
 .downloadAllButton {
   background: #2b2523;
+  margin-top: 0;
+
 }
 
 .deleteSelectedButton {
   background: #7f1d1d;
+  margin-top: 0;
+
 }
 
 /* Gallery */
@@ -732,4 +736,18 @@ button:disabled {
   .modalActions {
     flex-direction: column;
   }
+}
+
+.adminActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.downloadAllButton,
+.deleteSelectedButton {
+  margin-top: 0;
 }
